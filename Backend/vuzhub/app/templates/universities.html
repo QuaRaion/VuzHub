@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block head %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '../static/css/universities_style.css' %}">
+    <title>Университеты</title>
+</head>
+{% endblock %}
+
+{% block content %}
+<main class="main">
+        <div class="container">
+            <div class="main_content">
+                <div class="main_title">
+                    <div class="title">Высшие учебные заведения</div>
+                    <div cLass="text-main meaning">Подборка подходящих вузов</div>
+                </div>
+                <div class="universities">
+                    <button class="university" onclick="location.href='{% url 'specialties' %}'">
+                        <img src="../static/img/univer_logo/guap.svg" alt="Picture" class="univ_img">
+                        <div class="line">
+                            <h4 class="univ_text">ГУАП</h4>
+                        </div>
+                    </button>
+                    <button class="university" onclick="location.href='{% url 'specialties' %}'">
+                        <img src="../static/img/univer_logo/politech.svg" alt="Picture" class="univ_img">
+                        <div class="line">
+                            <h4 class="univ_text">Политех</h4>
+                        </div>
+                    </button>
+                    <button class="university" onclick="location.href='{% url 'specialties' %}'">
+                        <img src="../static/img/univer_logo/itmo.svg" alt="Picture" class="univ_img">
+                        <div class="line">
+                            <h4 class="univ_text">ИТМО</h4>
+                        </div>
+                    </button>
+                    <button class="university" onclick="location.href='{% url 'specialties' %}'">
+                        <img src="../static/img/univer_logo/spbgut.svg" alt="Picture" class="univ_img">
+                        <div class="line">
+                            <h4 class="univ_text">СПБГУТ</h4>
+                        </div>
+                    </button>
+                    <button class="university" onclick="location.href='{% url 'specialties' %}'">
+                        <img src="../static/img/univer_logo/spbgu.svg" alt="Picture" class="univ_img">
+                        <div class="line">
+                            <h4 class="univ_text">СПБГУ</h4>
+                        </div>
+                    </button>
+                    <button class="university" onclick="location.href='{% url 'specialties' %}'">
+                        <img src="../static/img/univer_logo/leti.svg" alt="Picture" class="univ_img">
+                        <div class="line">
+                            <h4 class="univ_text">ЛЭТИ</h4>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
