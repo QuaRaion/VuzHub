@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block head %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '../static/css/exams_style.css' %}">
+    <title>Баллы за ЕГЭ</title>
+</head>
+ {% endblock %}
+
+{% block content %}
+<main class="main">
+    <div class="container">
+        <div class="main_content">
+            <div class="main_title">
+                <div class="title">Поиск вуза</div>
+                <div cLass="text-main meaning">Укажи свои баллы ЕГЭ по предметам, которые сдавал</div>
+            </div>
+            <form class="exam_scores" action="" method="POST" autocomplete="on">
+                {% csrf_token %}
+                <div class="input_exam">
+                    <input type="number" name="russian" id="russian" placeholder="Русский язык">
+                    <input type="number" name="physics" id="physics" placeholder="Физика">
+                    <input type="number" name="literature" id="literature" placeholder="Литература">
+                    <input type="number" name="history" id="history" placeholder="История">
+                    <input type="number" name="math" id="math" placeholder="Математика">
+                    <input type="number" name="chemistry" id="chemistry" placeholder="Химия">
+                    <input type="number" name="geography" id="geography" placeholder="География">
+                    <input type="number" name="socialstudies" id="socialstudies" placeholder="Обществознание">
+                    <div class="last__row">
+                        <input type="number" name="informatics" id="informatics" placeholder="Информатика">
+                        <input type="number" name="biology" id="biology" placeholder="Биология">
+                        <input type="number" name="inglish" id="inglish" placeholder="Английский язык">
+                    </div>
+                </div>
+                <input type="submit" class="find" onclick="location.href='{% url 'universities' %}'" value="Подобрать">
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
